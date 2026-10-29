@@ -8,7 +8,7 @@ and tells you if it's too short (under 8 characters).
 
 ## How to run it
 1. Install Python from python.org
-2. Download `password_checker_V4.py`
+2. Download `password_checker_V5.py`
 4. Open Command Prompt and type: `python password_checker.py`
 
 ## What I learned
