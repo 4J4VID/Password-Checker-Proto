@@ -17,6 +17,8 @@ and tells you if it's too short (under 8 characters).
 - How to run a program from the command line
 - How to use a for loop to check every letter
 - How to fix an IndentationError and a missing colon
+- Learned how to create a unsecure passwords list
+- Found that swapping letters for lookalike numbers can sneak past a unsecure passwords list.
 
 ## Next steps
 - Check for numbers and symbols
