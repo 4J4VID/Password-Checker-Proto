@@ -16,7 +16,7 @@ You type in a password and the program tells you what's wrong with it, or says "
 
 1. Install Python from [python.org](https://www.python.org/downloads/)
 2. Download `password_checker_V5.py` from this repo
-3. Open Command Prompt in the folder where you saved it
+3. Open Command Prompt in the folder where it is saved
 4. Type: `python password_checker_V5.py`
 
 Example:
@@ -39,4 +39,29 @@ try something stronger, like EddieH4ll
 
 ## How the lookalike check works
 
-Before searching the bad word list, the program makes a "cleaned" copy of the password: all lowercase, with
+Before searching the bad word list, the program makes a "cleaned" copy of the password: all lowercase, with lookalike symbols swapped back to letters.
+
+```
+M0nkeyBoy  ->  monkeyboy
+```
+
+Now "monkey" is easy to find. The program checks both the plain lowercase copy and the cleaned copy, so a bad word with real numbers in it (like `1234`) is still caught.
+
+## Known limitations
+
+This is a learning project, not a real security tool.
+
+- The bad word list is small, so many weak passwords will still say "perfect".
+- It only knows a few lookalike swaps (for example, `7`→`t` isn't included yet).
+- Never type a password you actually use into any practice program.
+
+## Next steps
+
+- **V6:** Load a big list of common passwords from a file (like the `10k-most-common.txt` list in the SecLists project) instead of typing words by hand
+- Check whether the *whole* password matches a list entry, not just whether a word is hiding inside it
+- Add a strength score instead of a single pass/fail message
+- Write tests for each rule
+
+## Skills practiced
+
+Python basics, `for` loops, `if/elif/else`, string methods, lists, debugging, reading error messages, and using Git/GitHub.
