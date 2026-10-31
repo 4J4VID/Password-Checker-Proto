@@ -1,25 +1,55 @@
-# Password Checker proto
+Password Checker
 
-A small Python program that checks how long a password is.
+A beginner Python program that checks how strong a password is. I'm building it one version at a time while I learn Python and cybersecurity fundamentals.
 
-## What it does
-You type in a password. The program counts the characters
-and tells you if it's too short (under 8 characters).
+What it does
 
-## How to run it
-1. Install Python from python.org
-2. Download `password_checker_V5.py`
-4. Open Command Prompt and type: `python password_checker_V5.py`
+You type in a password and the program tells you what's wrong with it, or says "perfect" if it passes every check. It looks for:
 
-## What I learned
-- How to use input(), print(), and len() in Python
-- How if and else make decisions
-- How to run a program from the command line
-- How to use a for loop to check every letter
-- How to fix an IndentationError and a missing colon
-- Learned how to create a unsecure passwords list
-- Found that swapping letters for lookalike numbers can sneak past a unsecure passwords list.
+Passwords that are too short (under 8 characters)
+Missing numbers
+Missing capital letters
+Common bad passwords like password, 1234, and qwerty
+Lookalike tricks, like M0nkeyBoy (a zero instead of an "o")
+How to run it
+Install Python from python.org
+Download password_checker_V5.py from this repo
+Open Command Prompt in the folder where you saved it
+Type: python password_checker_V5.py
 
-## Next steps
-- Check for numbers and symbols
-- Compare against a list of common bad passwords
+Example:
+
+type a password: M0nkeyBoy
+your password has 9 characters.
+try something stronger, like EddieH4ll
+
+Version history
+Version	What I added	What I learned
+V1	Length check (must be 8+ characters)	input(), print(), len(), if/else
+V2	Number check using a for loop	Looping through characters, isdigit()
+V3	Capital letter check	isupper(), flags (True/False variables)
+V4	Bad word list (password, 1234, qwerty, and more) plus a joke message for EddieH4ll	Lists, in, .lower(), why the order of if/elif matters
+V5	Lookalike swap detection (0→o, 1→i, 3→e, @→a, 4→a, $→s)	str.maketrans(), .translate(), debugging a variable that was built but never used
+How the lookalike check works
+
+Before searching the bad word list, the program makes a "cleaned" copy of the password: all lowercase, with lookalike symbols swapped back to letters.
+
+M0nkeyBoy  ->  monkeyboy
+
+Now "monkey" is easy to find. The program checks both the plain lowercase copy and the cleaned copy, so a bad word with real numbers in it (like 1234) is still caught.
+
+Known limitations
+
+This is a learning project, not a real security tool.
+
+The bad word list is small, so many weak passwords will still say "perfect".
+It only knows a few lookalike swaps (for example, 7→t isn't included yet).
+Never type a password you actually use into any practice program.
+Next steps
+V6: Load a big list of common passwords from a file (like the 10k-most-common.txt list in the SecLists project) instead of typing words by hand
+Check whether the whole password matches a list entry, not just whether a word is hiding inside it
+Add a strength score instead of a single pass/fail message
+Write tests for each rule
+Skills practiced
+
+Python basics, for loops, if/elif/else, string methods, lists, debugging, reading error messages, and using Git/GitHub.
