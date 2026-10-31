@@ -9,7 +9,7 @@ and tells you if it's too short (under 8 characters).
 ## How to run it
 1. Install Python from python.org
 2. Download `password_checker_V5.py`
-4. Open Command Prompt and type: `python password_checker.py`
+4. Open Command Prompt and type: `python password_checker_V5.py`
 
 ## What I learned
 - How to use input(), print(), and len() in Python
