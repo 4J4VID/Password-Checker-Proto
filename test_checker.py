@@ -49,10 +49,10 @@ def find_checker():
     """Pick the checker file: a name given on the command line, or the newest default."""
     if len(sys.argv) > 1:
         return HERE / sys.argv[1]
-    for name in ("password_checker_V10.py", "password_checkerV10.py"):
+    for name in ("password_checker_V11.py", "password_checker_V10.py", "password_checkerV10.py"):
         if (HERE / name).exists():
             return HERE / name
-    return HERE / "password_checker_V10.py"
+    return HERE / "password_checker_V11.py"
 
 
 def run_checker(script, password):
